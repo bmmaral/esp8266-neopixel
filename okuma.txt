@@ -1,0 +1,11 @@
+ int gelenVeri = 0; /* gelen verinin kaydedileceği değişken */
+void setup() {
+   Serial.begin(9600); /* haberleşmeyi başlatalım */
+}
+void loop() {
+   if (Serial.available() > 0) { /* bilgisayardan veri gelmesini bekliyoruz */
+   gelenVeri = Serial.parseInt(); /* bilgisayardan gelen karakteri oku */
+   
+   Serial.println(gelenVeri); /* bilgisayardan gelen veriyi bilgisayara geri yolluyoruz */
+   }
+}
